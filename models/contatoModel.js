@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const contatoSchema = new mongoose.Schema(
     {
-        email: {
+        nome: {
           type: String,
           required: [true, "O campo nome deve ser preenchido"],
         },
