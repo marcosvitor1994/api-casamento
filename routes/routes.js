@@ -1,13 +1,18 @@
 const { Router, json } = require("express");
 
 const authMidd = require("../middlewares/auth.js");
+const { AdminModel } = require("../models/users.js");
 
+const LoginController = require("../controllers/loginController")
 const presenteController = require("../controllers/presenteController");
 const convidadoController = require("../controllers/convidadoController");
 const escolhaController = require("../controllers/escolhaController");
 const ContatoController = require("../controllers/contatoController.js");
 
 const routes = new Router();
+
+// Login
+routes.post("/login", LoginController.login);
 
 // Presentes
 routes.get("/item", presenteController.list);
