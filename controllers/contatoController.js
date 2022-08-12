@@ -7,7 +7,7 @@ class ContatoController {
 			const limit = req.query.limit || 3;
 			const page = req.query.page || 1;
 	
-			contato.find({}).select('-updatedAt -__v -createdAt').then((contatos) => {
+			contato.find({}).then((contatos) => {
 				return res.json({
 					error: false,
 					contatos
